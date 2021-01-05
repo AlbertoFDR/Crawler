@@ -118,32 +118,163 @@ test("Response received function is going to be tested", () => {
     expect(results.requests[0].frameId).toBe(data.responseReceived.frameId);
 });
 
-// WEB SOCKET WILL SEND HANDSHAKE REQUEST METHOD TEST
-test("WebSocket Will Send Handshake Request function is going to be tested", () => {
-    text = network.webSocketWillSendHandshakeRequest("params", "results");
-    expect(text).toBeUndefined();
-});
-
 // WEB SOCKET CREATED METHOD TEST
 test("Web socket created function is going to be tested", () => {
-    text = network.webSocketCreated("params", "results");
+    text = network.webSocketCreated(data.webSocket2, results);
     expect(text).toBeUndefined();
+
+    // URL comprobation
+    expect(results.webSockets[0].url).toBe(data.webSocket2.url);
+
+    // Initiator comprobation
+    expect(results.webSockets[0].initiator).toBeUndefined();
+
+    // State comprobation
+    expect(results.webSockets[0].state).toBe("webSocketCreation");
+
+    text = network.webSocketCreated(data.webSocket, results);
+    expect(text).toBeUndefined();
+    expect(results.webSockets[1].state).toBe("webSocketCreation");
+});
+
+// WEB SOCKET WILL SEND HANDSHAKE REQUEST METHOD TEST
+test("WebSocket Will Send Handshake Request function is going to be tested", () => {
+    text = network.webSocketWillSendHandshakeRequest(data.webSocket, results);
+    expect(text).toBeUndefined();
+
+    // Request Id comprobation
+    expect(results.webSockets[1].requestId).toBe(data.webSocket.requestId);
+
+    // Timestamp comprobation
+    expect(results.webSockets[1].timestamp).toBe(data.webSocket.timestamp);
+
+    // wallTime comprobation
+    expect(results.webSockets[1].wallTime).toBe(data.webSocket.wallTime);
+
+    // Request comprobation
+    expect(results.webSockets[1].request.headers.Host).toBe(
+        data.webSocket.request.headers.Host
+    );
+
+    // State comprobation
+    expect(results.webSockets[1].state).toBe("initiateHandshake");
+
+    // Expected 2 because of webSocketCreation test
+    expect(results.webSockets.length).toBe(2);
+
+    // Add new that is not in the []
+    text = network.webSocketWillSendHandshakeRequest(data.webSocket3, results);
+    expect(text).toBeUndefined();
+    
+    // Request Id comprobation
+    expect(results.webSockets[2].requestId).toBe(data.webSocket3.requestId);
+
+    // Timestamp comprobation
+    expect(results.webSockets[2].timestamp).toBe(data.webSocket3.timestamp);
+
+    // wallTime comprobation
+    expect(results.webSockets[2].wallTime).toBe(data.webSocket3.wallTime);
+
+    // Request comprobation
+    expect(results.webSockets[2].request.headers.Host).toBe(
+        data.webSocket3.request.headers.Host
+    );
+
+    // State comprobation
+    expect(results.webSockets[2].state).toBe("initiateHandshake");
+});
+
+// WEB SOCKET CLOSED METHOD TEST
+test("Web socket closed function is going to be tested", () => {
+    text = network.webSocketClosed(data.webSocket, results);
+    expect(text).toBeUndefined();
+
+    expect(results.webSockets[1].state).toBe("Closed");
 });
 
 // WEB SOCKET FRAME ERROR METHOD TEST
 test("Web socket frame error function is going to be tested", () => {
-    text = network.webSocketFrameError("params", "results");
+    text = network.webSocketFrameError(data.frameError, results);
     expect(text).toBeUndefined();
+
+    // Timestamp
+    expect(results.webSockets[1].frameError[0].timestamp).toBe(
+        data.frameError.timestamp
+    );
+
+    // Error message
+    expect(results.webSockets[1].frameError[0].errorMessage).toBe(
+        data.frameError.errorMessage
+    );
 });
 
 // WEB SOCKET FRAME RECEIVED METHOD TEST
 test("Web socket frame received function is going to be tested", () => {
-    text = network.webSocketFrameReceived("params", "results");
+    text = network.webSocketFrameReceived(data.frame, results);
     expect(text).toBeUndefined();
+
+    // Timestamp
+    expect(results.webSockets[0].frameReceived[0].timestamp).toBe(
+        data.frame.timestamp
+    );
+
+    // Response
+    expect(results.webSockets[0].frameReceived[0].response.opcode).toBe(
+        data.frame.response.opcode
+    );
+
+
+    text = network.webSocketFrameReceived(data.frame64, results);
+    expect(text).toBeUndefined();
+
+    // Timestamp
+    expect(results.webSockets[2].frameReceived[0].timestamp).toBe(
+        data.frame64.timestamp
+    );
+
+    // Response
+    expect(results.webSockets[2].frameReceived[0].response.opcode).toBe(
+        data.frame64.response.opcode
+    );
 });
 
 // WEB SOCKET FRAME SENT METHOD TEST
 test("Web socket frame sent function is going to be tested", () => {
-    text = network.webSocketFrameSent("params", "results");
+    text = network.webSocketFrameSent(data.frame, results);
+    expect(text).toBeUndefined();
+
+    // Timestamp
+    expect(results.webSockets[0].frameSent[0].timestamp).toBe(
+        data.frame.timestamp
+    );
+
+    // Response
+    expect(results.webSockets[0].frameSent[0].response.opcode).toBe(
+        data.frame.response.opcode
+    );
+
+    text = network.webSocketFrameSent(data.frame64, results);
+    expect(text).toBeUndefined();
+
+    // Timestamp
+    expect(results.webSockets[2].frameSent[0].timestamp).toBe(
+        data.frame64.timestamp
+    );
+
+    // Response
+    expect(results.webSockets[2].frameSent[0].response.opcode).toBe(
+        data.frame64.response.opcode
+    );
+});
+
+// WEB TRANSPORT CREATED METHOD TEST
+test("Web transport created function is going to be tested", () => {
+    text = network.webTransportCreated("params", "results");
+    expect(text).toBeUndefined();
+});
+
+// WEB TRANSPORT CLOSED METHOD TEST
+test("Web transport closed function is going to be tested", () => {
+    text = network.webTransportClosed("params", "results");
     expect(text).toBeUndefined();
 });

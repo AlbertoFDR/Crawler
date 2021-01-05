@@ -184,6 +184,120 @@ responseReceived = {
     frameId: "28807CCE21DED25A728599CE423DDC7F",
 };
 
+// WEBSOCKETS DATA TESTING
+webSocket = {
+    requestId: "1234",
+    timestamp: 1234,
+    wallTime: 1234,
+    request: {
+        headers: {
+            Pragma: "no-cache",
+            Origin: "http://www.gearhack.com",
+            "Accept-Encoding": "gzip, deflate, br",
+            Host: "stone.reauthenticator.com",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Sec-WebSocket-Key": "0p53eb1yoMDCgYPDyzoUKQ==",
+            "User-Agent":
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36",
+            Upgrade: "websocket",
+            "Sec-WebSocket-Extensions":
+                "permessage-deflate; client_max_window_bits",
+            "Cache-Control": "no-cache",
+            Connection: "Upgrade",
+            "Sec-WebSocket-Version": "13",
+        },
+    },
+    initiator: {
+        type: "script",
+        stack: {
+            callFrames: [
+                {
+                    functionName: "_0x305b3c",
+                    scriptId: "11",
+                    url: "https://statdynamic.com/lib/crypta.js",
+                    lineNumber: 0,
+                    columnNumber: 1005051,
+                },
+            ],
+        },
+    },
+};
+
+webSocket2 = {
+    requestId: "1255",
+    timestamp: 1234,
+    wallTime: 1234,
+    request: {
+        headers: {
+            Pragma: "no-cache",
+            Origin: "http://www.gearhack.com",
+            "Accept-Encoding": "gzip, deflate, br",
+            Host: "stone.reauthenticator.com",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Sec-WebSocket-Key": "0p53eb1yoMDCgYPDyzoUKQ==",
+            "User-Agent":
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36",
+            Upgrade: "websocket",
+            "Sec-WebSocket-Extensions":
+                "permessage-deflate; client_max_window_bits",
+            "Cache-Control": "no-cache",
+            Connection: "Upgrade",
+            "Sec-WebSocket-Version": "13",
+        },
+    },
+};
+
+webSocket3 = {
+    requestId: "1266",
+    timestamp: 1234,
+    wallTime: 1234,
+    request: {
+        headers: {
+            Pragma: "no-cache",
+            Origin: "http://www.gearhack.com",
+            "Accept-Encoding": "gzip, deflate, br",
+            Host: "stone.reauthenticator.com",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Sec-WebSocket-Key": "0p53eb1yoMDCgYPDyzoUKQ==",
+            "User-Agent":
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36",
+            Upgrade: "websocket",
+            "Sec-WebSocket-Extensions":
+                "permessage-deflate; client_max_window_bits",
+            "Cache-Control": "no-cache",
+            Connection: "Upgrade",
+            "Sec-WebSocket-Version": "13",
+        },
+    },
+};
+
+frameError = {
+    requestId: "1234",
+    timestamp: 933369.885713,
+    errorMessage:
+        "Error during WebSocket handshake: Unexpected response code: 503",
+};
+
+frame = {
+    requestId: "1255",
+    timestamp: 933550.300287,
+    response: {
+        opcode: 1,
+        mask: false,
+        payloadData: '{"type":"hash_accepted","params":{"hashes":10240}}',
+    },
+};
+
+frame64 = {
+    requestId: "1266",
+    timestamp: 933550.300287,
+    response: {
+        opcode: 1,
+        mask: false,
+        payloadData: "b3Bjb2RlOiAxLCBtYXNrOiBmYWxzZSwgcGF5bG9hZERhdGE6ICd7InR5cGUiOiJoYXNoX2FjY2VwdGVkIiwicGFyYW1zIjp7Imhhc2hlcyI6MTAyNDB9fScK"
+    },
+};
+
 data = {
     // Request will be sent data
     requestWillBeSent: requestWillBeSent,
@@ -199,6 +313,14 @@ data = {
 
     // Response received
     responseReceived: responseReceived,
+
+    // WebSocket data
+    webSocket: webSocket,
+    webSocket2: webSocket2,
+    webSocket3: webSocket3,
+    frameError: frameError,
+    frame: frame,
+    frame64: frame64,
 };
 
 module.exports = data;
