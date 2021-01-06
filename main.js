@@ -44,6 +44,7 @@ const argv = yargs
 
 // Line arguments parsing
 if (!argv.URL.includes("http://") && !argv.URL.includes("https://")) {
+    // TODO Add more checks for this argument
     // The code is for the red color
     console.error(
         "\x1b[31m",
