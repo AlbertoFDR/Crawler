@@ -98,16 +98,16 @@ test("HTTP loading failed function is going to be tested", () => {
 //    expect(results.requests[0].shouldReportCorbBlocking).toBeUndefined();
 //});
 
-test("Loading finished function is going to be tested", () => {
-    text = network.loadingFinished(data.loadingFinished2, results);
-    expect(text).toBeUndefined();
-
-    expect(results.requests[0].encodedDataLength).toBe(
-        data.loadingFinished2.encodedDataLength
-    );
-    expect(results.requests[0].state).toBe("Loading finished.");
-    expect(results.requests[0].shouldReportCorbBlocking).toBe(true);
-});
+//test("Loading finished function is going to be tested", () => {
+//    text = network.loadingFinished(data.loadingFinished2, results);
+//    expect(text).toBeUndefined();
+//
+//    expect(results.requests[0].encodedDataLength).toBe(
+//        data.loadingFinished2.encodedDataLength
+//    );
+//    expect(results.requests[0].state).toBe("Loading finished.");
+//    expect(results.requests[0].shouldReportCorbBlocking).toBe(true);
+//});
 
 // RESPONSE RECEIVED METHOD TEST
 test("Response received function is going to be tested", () => {
