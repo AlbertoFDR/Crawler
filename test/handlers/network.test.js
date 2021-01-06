@@ -87,16 +87,16 @@ test("HTTP loading failed function is going to be tested", () => {
 // 2 methods:
 //      - Data with falses searching undefined
 //      - Normal data
-test("Loading finished function with undefined data is going to be tested", () => {
-    text = network.loadingFinished(data.loadingFinished, results);
-    expect(text).toBeUndefined();
-
-    expect(results.requests[0].encodedDataLength).toBe(
-        data.loadingFinished.encodedDataLength
-    );
-    expect(results.requests[0].state).toBe("Loading finished.");
-    expect(results.requests[0].shouldReportCorbBlocking).toBeUndefined();
-});
+//test("Loading finished function with undefined data is going to be tested", () => {
+//    text = network.loadingFinished(data.loadingFinished, results);
+//    expect(text).toBeUndefined();
+//
+//    expect(results.requests[0].encodedDataLength).toBe(
+//        data.loadingFinished.encodedDataLength
+//    );
+//    expect(results.requests[0].state).toBe("Loading finished.");
+//    expect(results.requests[0].shouldReportCorbBlocking).toBeUndefined();
+//});
 
 test("Loading finished function is going to be tested", () => {
     text = network.loadingFinished(data.loadingFinished2, results);
