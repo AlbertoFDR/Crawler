@@ -20,7 +20,6 @@ Crawler is a web crawler developed in NodeJS which navigate webs collecting the 
 - [Authors](#authors)
 
 
-
 ## Crawler Most Important Features
 ### Profiler 
 ### Profiler 
