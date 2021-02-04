@@ -8,14 +8,20 @@ const page = require("../../lib/handlers/page.js");
 
 // Fired when interstitial page was shown
 test("interstitialShown function is going to be tested", () => {
-    text = page.interstitialShown("params", "results");
+    results = {};
+    results.interstitial = false;
+    text = page.interstitialShown(results);
     expect(text).toBeUndefined();
+    expect(results.interstitial).toBeTruthy();
 });
 
 // Fired when interstitial page was hidden
 test("interstitialHidden function is going to be tested", () => {
-    text = page.interstitialShown("params", "results");
+    results = {};
+    results.interstitial = false;
+    text = page.interstitialShown(results);
     expect(text).toBeUndefined();
+    expect(results.interstitial).toBeTruthy();
 });
 
 // Fired when a JS initiated dialog is about to open

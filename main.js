@@ -32,6 +32,11 @@ const argv = yargs
         type: "boolean",
         description: "Launch the browser in headless mode.",
     })
+    .option("print", {
+        alias: "p",
+        type: "boolean",
+        description: "Print the result",
+    })
     .option("verbose", {
         alias: "v",
         type: "boolean",
@@ -43,6 +48,8 @@ const argv = yargs
     .alias("help", "h").argv;
 
 // Line arguments parsing
+// TODO Add a checker for arguments that doesn't exist
+
 if (!argv.URL.includes("http://") && !argv.URL.includes("https://")) {
     // TODO Add more checks for this argument
     // The code is for the red color
@@ -64,6 +71,10 @@ if (argv.mode && argv.mode >= 0 && argv.mode < 3) {
 
 if (argv.headless) {
     config.headless = true;
+}
+
+if (argv.print) {
+    config.print = true;
 }
 
 if (argv.verbose) {
