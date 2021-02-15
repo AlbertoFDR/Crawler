@@ -1,45 +1,56 @@
-# Crawler ![CI](https://github.com/AlbertoFDR/Crawler/workflows/CI/badge.svg)
+# Kankuro Crawler ![CI](https://github.com/AlbertoFDR/Crawler/workflows/CI/badge.svg)
 
-Crawler is a web crawler developed in NodeJS which navigate webs collecting the most important aspects. The purpose of this project is to be a crawler template for different types of objectives. 
+Kankuro-Crawler is a web crawler developed in NodeJS which navigate webs collecting the most important features (requests, screenshot, frames, webSockets, files...). The purpose of this project is to be a crawler template for different types of purposes. Is build using the [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface) to navigate the webs.
 
 ## Demo
 
-![Demo](name-of-giphy.gif)
+![Demo](demo.gif)
 
 ### Table of content
 
+- [Usage](#usage)
 - [Crawler Most Important Features](#crawler-most-important-features)
-    - [Profiler](#despliegue-de-una-máquina-virtual)
-    - [Files](#configuración-del-entorno)
-    - [WebSockets](#configuración-del-entorno)
-    - [Headers](#configuración-del-entorno)
-- [Usage](#inicio-del-ejercicio)
-    - [SEI CERT Java Rules](#sei-cert-java-rules)
-- [Example Webs Usage](#inicio-del-ejercicio)
-- [FAQ](#inicio-del-ejercicio)
-- [Authors](#authors)
-
-
-## Crawler Most Important Features
-### Profiler 
-### Profiler 
-
+- [Example Webs](#example-webs-usage)
+- [FAQ](#faq)
+- [Author](#author)
 
 
 ## Usage
+This section is a introduction to the usage of the tool like a "Getting Started".
+
+```
+> git clone https://github.com/AlbertoFDR/Crawler.git
+> cd Crawler/
+> chmod +x install.sh
+> ./install.sh
+```
+
+
+## Crawler Most Important Features
+- Screenshot: It takes a screenshot of the web.
+- Frames: Gather the frames in the page.
+- Requests: Collect the requests.
+- Any interstitial page.
+- Javascript created dialogs.
+- WebSockets: Gather the ws communication if any.
+- Files: Download the files of the page (HTML,JS,CSS,Wasm...).
+- Any window open.
+
+
+
 
 
 ## Example Webs Usage
-python3 -m http.server 
+- WebSockets: There are two versions, one with plaintext communication and the other one with Base64. Sudo is to use the port 80.
+```
+> pip3 install websockets
+> sudo ./script.sh 
+```
 
-
-WebSockets 
-    - pip3 install websockets
-    - sudo ./script.sh (Launches the static with the index and the python with the server that receives ws)
 
 
 ## FAQ
 
 ## Authors
-
+- Alberto FDR: [Web](https://albertofdr.github.io/)
 
