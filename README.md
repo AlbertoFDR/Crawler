@@ -1,4 +1,6 @@
 # Kankuro Crawler ![CI](https://github.com/AlbertoFDR/Crawler/workflows/CI/badge.svg)
+### One of my unfinished project :)
+<hr>
 
 Kankuro-Crawler is a web crawler developed in NodeJS which navigate webs collecting the most important features (requests, screenshot, frames, webSockets, files...). The purpose of this project is to be a crawler template for different types of purposes. Is build using the [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface) to navigate the webs.
 
